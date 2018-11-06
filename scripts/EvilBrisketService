@@ -5,7 +5,7 @@ export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 
 case "$1" in
 start)
-exec sudo forever --sourceDir=/home/pi/evilbrisket/server -p /home/pi/evilbrisket/server evilbrisket.js  
+exec sudo forever --sourceDir=/home/pi/evilbrisket-service -p /home/pi/evilbrisket-service evilbrisket.js  
 ;;
 stop)
 exec sudo forever stop --sourceDir=/usr/local/bin/server evilbrisket.js
