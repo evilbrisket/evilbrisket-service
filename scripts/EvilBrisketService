@@ -1,11 +1,22 @@
 #!/bin/sh
 #/etc/init.d/EvilBrisketService
-export PATH=$PATH:/usr/local/bin
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+
+### BEGIN INIT INFO
+# Provides:          evilbrisket
+# Required-Start:    $all
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start Evil Brisket service at boot
+# Description:       Start Evil Brisket service at boot
+### END INIT INFO
+
+export PATH=$PATH:/usr/bin
+export NODE_PATH=$NODE_PATH:/usr/lib/node_modules
 
 case "$1" in
 start)
-exec sudo forever --sourceDir=/home/pi/evilbrisket-service -p /home/pi/evilbrisket-service evilbrisket.js  
+exec sudo forever --sourceDir=/home/pi/evilbrisket-service -p /home/pi/evilbrisket-service evilbrisket.js > /tmp/eb.log 
 ;;
 stop)
 exec sudo forever stop --sourceDir=/usr/local/bin/server evilbrisket.js
