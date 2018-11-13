@@ -20,6 +20,6 @@
     "uint32": "^0.2.1",
     "util": "^0.10.3",
     "wireless-tools": "^0.19.0",
-    "evilbrisket": "1.0.0"
+    "evilbrisket": "1.0.1"
   }
 }
